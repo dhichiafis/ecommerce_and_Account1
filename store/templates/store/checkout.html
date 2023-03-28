@@ -1,0 +1,10 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<p>THis is the checkout page</p>
+price:{{cart.get_total_price}}
+<form method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="checkout">
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<div id="container">
+  this is the cart page
+  {% for item in cart %}
+    {{item.product.name}}
+    {{item.product.price}}
+    <a href="{% url 'store:remove_from_cart' item.product.id %}"><button>remove from cart</button></a>
+  {% endfor %}
+  <p>the total price for products is {{cart.get_total_price}}</p>
+</div>
+<div>
+  <p><a href="{% url 'store:checkout' %}">Checkout</a></p>
+</div>
+{% endblock %}

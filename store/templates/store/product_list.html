@@ -1,0 +1,14 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<div id="container">
+  <p>products</p>
+  {% for product in products %}
+
+    <a href="{{product.get_absolute_url}}">
+      <img src="{{product.image.url}}">
+      name:{{product.name}}
+      price:{{product.price}}
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

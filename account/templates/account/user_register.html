@@ -1,0 +1,9 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<p>use the form to register</p>
+<form method="post" action=".">
+    {{user.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="new user">
+</form>
+{% endblock %}

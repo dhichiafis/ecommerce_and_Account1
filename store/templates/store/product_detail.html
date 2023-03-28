@@ -1,0 +1,14 @@
+{% extends 'account/base.html' %}
+
+{% block content %}
+<div id="container">
+  <p>this is the product page</p>
+  <img src="{{product.image.url}}">
+  <br>
+  price=:{{product.price}}
+  description:{{product.description}}
+</div>
+<div>
+  <a href="{% url 'store:add_to_cart' product.id %}"><button>add to cart</button></a>
+</div>
+{% endblock %}
